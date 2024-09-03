@@ -157,9 +157,150 @@ public class PracticeService {
 	            System.out.print(arr[i]);
 	        }
 	    }
-	
-	
-	   
-	   
-	   
+	   public void practice8() {
+
+	        Scanner sc = new Scanner(System.in);
+
+	        while (true) { // 3 이상의 수가 입력 될 때 까지 무한 반봅
+	            // -> 3 이상이 입력되면 break문으로 종료
+
+	            System.out.print("정수 : ");
+	            int input = sc.nextInt();
+
+	            if (input < 3 || input % 2 == 0) { // 3 미만 또는 짝수인 경우 -> 반복
+	                System.out.println("다시 입력하세요.");
+
+	            } else {
+	                // 입력 받은 정수 만큼의 크기를 가지는 배열 생성
+	                int[] arr = new int[input];
+
+	                int num = 0; // arr 배열에 대입될 값
+
+	                for (int i = 0; i < arr.length; i++) {
+	                    if (i <= arr.length / 2) { // 중간 이전 까지 -> 증가
+	                        arr[i] = ++num;
+
+	                    } else { // 중간 이후 -> 감소
+	                        arr[i] = --num;
+	                    }
+
+	                    // 출력 시 , 추가 (단, 마지막 제외)
+	                    if (i == arr.length - 1) { // 마지막 바퀴
+	                        System.out.print(arr[i]);
+
+	                    } else {
+	                        System.out.print(arr[i] + ", ");
+	                    }
+
+	                }
+	                break; // while 반복 멈춤
+	            }
+	        }
+	    }
+	   public void practice9(){
+	        int[] arr = new int[10];
+
+	        for(int i=0 ; i<arr.length ; i++){
+	            arr[i] = (int)(Math.random() * 10 + 1);
+	        }
+
+	        System.out.print("발생한 난수 : ");
+	        for(int i=0 ; i<arr.length ; i++){
+	            System.out.print(arr[i] + " ");
+	        }
+	    }
+	   public void practice10(){
+
+			int[] arr = new int[10];
+			
+			System.out.print("발생한 난수 : ");
+			
+			for(int i = 0 ; i < arr.length; i++) {
+				arr[i] = (int)(Math.random() * 10 + 1);
+				System.out.print(arr[i] + " ");
+			}
+			
+			int max = 0;
+			int min = 10;
+			
+			for(int i = 0; i < arr.length; i++) {
+				
+				if(arr[i] > max) {
+					max = arr[i];
+				}
+				if(arr[i] < min) {
+					min = arr[i];
+				}
+			}
+			System.out.println();
+			System.out.println("최대값 : " + max);
+			System.out.println("최소값 : " + min);
+		}   
+	   public void practice11(){
+			//10개의 값을 저장할 수 있는 정수형 배열을 선언 및 할당하고
+			//1~10 사이의 난수를 발생시켜 중복된 값이 없게 배열에 초기화한 후 출력하세요.
+
+			//[실행 화면]
+			//4 1 3 6 9 5 8 10 7 2
+			
+			int[] arr = new int[10];
+			
+			for(int i = 0; i < arr.length; i++) {
+				
+				arr[i] = (int)(Math.random() * 10 +1);
+				
+				for(int i2 = 0; i2 < i; i2++) {
+					
+					if(arr[i2] == arr[i]) {
+						
+						i--;
+						
+						break;
+					}
+				}
+			}
+			for(int i = 0; i < arr.length; i++) {
+				
+				System.out.print(arr[i] + " ");
+			}
+		}   
+	   /* 실습문제 12
+	    로또 번호 자동 생성기 프로그램을 만들기.
+	    (중복 값 없이 오름차순으로 정렬하여 출력하세요.)
+	    [실행 화면]
+	    3 4 15 17 28 40
+	    */
+	    public void practice12(){
+	        // 1. 크기가 6인 정수형 배열 선언 및 할당
+	        int[] lotto = new int[6];
+
+	        // 2. 배열에 중복값없이 1부터 45사이의 난수 초기화
+	        for(int i=0; i<lotto.length; i++) {
+	            lotto[i] = (int)(Math.random() * 45 + 1);
+
+	            for(int j=0; j<i; j++) { // 중복 제거
+	                if(lotto[i] == lotto[j]) {
+	                    i--;
+	                    break;
+	                }
+	            }
+	        }
+
+	        // 3. 오름차순 정렬(선택정렬)
+	        for(int i=0; i<lotto.length-1; i++) { // 비교 주체
+	            for(int j=i+1; j<lotto.length; j++) { // 비교 대상
+	                if(lotto[i] > lotto[j]) { // 비교 주체가 비교 대상보다 큰 경우 값을 바꿔줘야됨
+
+	                    int temp = lotto[i];
+	                    lotto[i] = lotto[j];
+	                    lotto[j] = temp;
+	                }
+	            }
+	        }
+
+	        // 4. 출력
+	        for(int i=0; i<lotto.length; i++) {
+	            System.out.print(lotto[i] + " ");
+	        }
+	    }   
 }	
