@@ -1,5 +1,6 @@
 package edu.kh.array.practice.service;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class PracticeService {
@@ -22,8 +23,8 @@ public class PracticeService {
 	public void practice2() {
 		int[] arr = new int[9];
 		
-		int sum =0;
-		for (int i = 0; i <arr.length; i++) {
+		int sum = 0;
+		for (int i = 0; i < arr.length; i++) {
 			arr[i] = arr.length - i;
 			System.out.print(arr[i] + " ");
 			
@@ -84,7 +85,8 @@ public class PracticeService {
 		System.out.print("문자열 : ");
 		
 		String str = sc.nextLine();
-		
+		//사용자가 입력한 문자열(str)을 문자 하나하나를 char 배열에 넣기
+		// 먼저 문자길이를 새로 대입후, 반복문 charAt(i)값을 arr[i] .
 		char[] arr = new char[str.length()];
 		
 		for (int i = 0; i <arr.length; i++) {
@@ -94,21 +96,26 @@ public class PracticeService {
 		
 		System.out.print("문자 : ");
 		char ch = sc.nextLine().charAt(0);
+		// 검색할 문자가 문자열에 몇개가 들어와있는지, 어느 인덱스에 있는지 파악
+		int count = 0; // 검색할 문자가 몇개 들어있는지 새어줄 변수
+		//문자열에서 동일한 문자가 발견될때마다 1씩 증가
 		
-		int count = 0;
-		
+		// 반복문 수행 전 문자열 출력
 		System.out.println(str + "에" + ch + "가 존재하는 위치(인덱스) : ");
 		
+		// 인덱스마다 어디에 있는지 접근하기 위해 반복문 사용
 		for (int i = 0; i < arr.length; i++) {
 			if (arr[i] == ch) { // 해당 인덱스 값이 검색될 문자와 같을 경우
-                System.out.print(i + " ");    // 해당 인덱스 이어서 출력
+                System.out.print(i + " ");    // 해당하는 인덱스 이어서 출력
 
                 count++;    // 그리고 count 1증가
             }
 		}
 		
+		// 위에서 마지막으로 print() 사용했기 때문에 개행을 해줌.
 		System.out.println();
 		
+		// 위에서 구한값들 출력하기
 		System.out.println(ch + "개수 : " + count);
 		
 		
@@ -144,7 +151,7 @@ public class PracticeService {
 
 	        System.out.print("주민등록번호(-포함) : ");
 	        String input = sc.next();
-
+	        //char[] arr 에 (새로운) 길이만큼 input.length를 할당
 	        char[] arr = new char[input.length()];
 
 	        for (int i = 0; i < arr.length; i++) {
@@ -161,7 +168,7 @@ public class PracticeService {
 
 	        Scanner sc = new Scanner(System.in);
 
-	        while (true) { // 3 이상의 수가 입력 될 때 까지 무한 반봅
+	        while (true) { // 3 이상의 수가 입력 될 때 까지 무한 반복
 	            // -> 3 이상이 입력되면 break문으로 종료
 
 	            System.out.print("정수 : ");
@@ -193,19 +200,19 @@ public class PracticeService {
 	                    }
 
 	                }
-	                break; // while 반복 멈춤
+	                break; // while 반복 멈춤 for문 끝나고 나서 break 해줘야 함
 	            }
 	        }
 	    }
 	   public void practice9(){
 	        int[] arr = new int[10];
-
-	        for(int i=0 ; i<arr.length ; i++){
+	        // 배열을 초기화할목적이라서 for문 사용
+	        for(int i = 0; i < arr.length; i++){
 	            arr[i] = (int)(Math.random() * 10 + 1);
 	        }
 
 	        System.out.print("발생한 난수 : ");
-	        for(int i=0 ; i<arr.length ; i++){
+	        for(int i = 0; i < arr.length; i++){
 	            System.out.print(arr[i] + " ");
 	        }
 	    }
@@ -220,7 +227,7 @@ public class PracticeService {
 				System.out.print(arr[i] + " ");
 			}
 			
-			int max = 0;
+			int max = 1;
 			int min = 10;
 			
 			for(int i = 0; i < arr.length; i++) {
@@ -303,4 +310,93 @@ public class PracticeService {
 	            System.out.print(lotto[i] + " ");
 	        }
 	    }   
+	    public void practice13() {
+	    	Scanner sc = new Scanner(System.in);
+	    	
+	    	// 입력할 문자열을 str 이용해서 nextline에 할당
+	    	System.out.print("문자열 : ");
+	    	String str = sc.nextLine();
+	    	
+	    	// 해당 문자열의 문자들을 char[]에 담기
+	    	char[] arr = new char[str.length()];
+	    	
+	    	
+	    	// 문자 개수 카운트
+	    	int count = 0;
+
+	    	System.out.print("문자열에 있는 문자 : ");
+	    	// char배열에서 중복값 존재할 경우 출력x
+	    	for (int i = 0; i < arr.length; i++) {
+	    		arr[i] = str.charAt(i);
+	    	
+	    		boolean flag = true; // 중복 체크용 flag
+	    		// for문 이용
+	    		for (int j = 0; j < i; j++) {
+	    			if (arr[j] == arr[i])
+	    				flag = false;
+	    		}
+	    		
+	    		if (flag) { // 중복이 발생하는 때
+	    			if (i == 0)
+	    				System.out.print(arr[i]);
+	    			else
+	    				System.out.print(", " + arr[i]);
+	    		
+	    			//중복 아닐 때만 count 개수 늘리기
+	    			count++;
+	    		}
+	    	}
+
+	    	System.out.println("\n문자 개수 : " + count);
+	    	
+	    	sc.close();
+	    }
+	    
+	    // 자바에서 배열 특징
+	    // 같은 자료형만 저장 가능, 길이 변경할 수 없다.
+	    public void practice14() {
+	    	Scanner sc = new Scanner(System.in);
+	    	
+	    	System.out.print("배열의 크기를 입력하세요 : ");
+	    	String[] arr = new String[sc.nextInt()];
+	    	sc.nextLine(); // 입력버퍼에 있는 개행문자 제거
+	    	
+	    	int index = 0;
+	    	
+	    	while (true) {
+	    		for (int i = index; i < arr.length; i++) {
+	    			System.out.print(i + 1 + "번째 문자열 : ");
+	    			arr[i] = sc.nextLine(); // **입력버퍼에 있는 개행문자를 비워줘야함
+	    		}
+	    		// 반복이 시작되는 구간부터 무한반복하는 while 작성하여 내부에 종료조건 만들어서 break해줌
+	    		index = arr.length;
+
+	    		System.out.print("더 값을 입력하시겠습니까?(Y/N) : ");
+	    		char plus = sc.next().charAt(0);
+	    		
+	    		// 값을 더 입력할 경우
+	    		if (plus == 'Y' || plus == 'y') {
+	    			System.out.print("더 입력하고 싶은 개수 : ");
+	    			
+	    			// 새로운 값을 입력받을 배열 생성 --> 기존 배열 크기 + 추가 개수 입력
+	    			String[] arr2 = new String[arr.length + sc.nextInt()];
+	    			sc.nextLine();
+	    			
+	    			// 배열 복사 + 새로운 문자열 입력받기
+	    			System.arraycopy(arr, 0, arr2, 0, arr.length);
+	    			arr = arr2;
+	    		// 그렇지 않을 경우	
+	    		} else if (plus == 'N' || plus == 'n') {
+	    			System.out.println(Arrays.toString(arr));
+	    			break;
+	    		// 나머지	
+	    		} else {
+	    			System.out.println("잘못 입력하셨습니다. 다시 입력해주세요");
+	    			continue;
+	    		}
+
+	    	}
+	    	
+	    	sc.close();
+	    }
 }	
