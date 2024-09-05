@@ -7,7 +7,7 @@ public class AbstractionService {
 		// People 클래스를 이용해서 국민 객체 만들기
 		People p1 = new People();// People을 담을수 있는 상자여야함
 		// People p1 : People 객체의 주소를 저장하여 참조하는변수 p1
-		// new Peope() : 새로운 People 객체를 Heap 영역에 생성
+		// new People() : 새로운 People 객체를 Heap 영역에 생성
 		
 		// * 클래스 이름이 자료형처럼 사용된다
 		// ** == 클래스를 "사용자 정의 자료형" 이라고도 부른다!!!

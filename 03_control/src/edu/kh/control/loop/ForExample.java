@@ -20,7 +20,7 @@ public class ForExample { // 기능제공용 클래스
 			System.out.print( (char)i ); // 강제형변환
 		}
 		
-		System.out.println("\n======================");
+		System.out.println("\n==========================");
 		
 		for(char i = 'A'; i <= 'Z'; i++) {
 			System.out.print( i );

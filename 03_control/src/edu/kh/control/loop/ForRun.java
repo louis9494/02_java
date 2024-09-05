@@ -8,7 +8,7 @@ public class ForRun {
 		//forEx.ex2();
 		//forEx.ex3();
 		//forEx.ex4();
-		forEx.ex5();
+		forEx.ex2();
 		//forEx.ex7();
 		//forEx.ex8();
 		//forEx.ex8();
