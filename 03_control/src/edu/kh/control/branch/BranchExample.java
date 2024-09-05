@@ -90,12 +90,18 @@ public class BranchExample {
 			//...
 			//39 끝
 
-			for(int i = 1; i <= 100; i++)
+			for(int i = 1; i <= 100; i++) {
 			if( i == 40) {
 				break;
+			} 
+			
+			if(i % 5 == 0) {
+				continue;
 			}
 				
-				
+			
+			System.out.print(i + " ");	
+			}		
 	
 		
 		}
