@@ -7,7 +7,7 @@ public class BranchRun {
 		
 		//branchEx.ex1();
 		//branchEx.ex3();
-		branchEx.ex4();
+		branchEx.RSPGame();
 		
 	}
 
