@@ -9,7 +9,7 @@ public class Run1 {
 		//c1.ex2();
 		//c1.ex3();
 		//c1.ex4();
-		c1.ex5();
+
 	}
 
 }
