@@ -18,7 +18,7 @@ public class Member {// 속성 + 기능
 	
 	// 매개변수 생성자 (필드 모두 초기화)
 	public Member(String memberId, String memberPw, String memberName, int memberAge) {
-		// 오버로딩 적용(매개변수의 개수 다름)
+		// 오버로딩(같은 이름의 메서드를 여러개 만들어 주는것) 적용(매개변수의 개수 다름)
 		
 		
 		// 매개변수로 전달받은값을 필드에 대입 과정
