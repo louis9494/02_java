@@ -52,7 +52,19 @@ public class MemberService {
 			case 1 : System.out.println( signUp() ); break;
 			case 2 : System.out.println( login() ); break;
 			case 3 : System.out.println( selectMember() ); break;
-			case 4 : System.out.println( updateMember() ); break;
+			case 4 : 
+				int result = updateMember();
+				
+				if(result == -1) {
+					System.out.println("로그인 후 이용바람");
+				} else if(result == 0) {
+					System.out.println("회원 정보 수정 실패(비밀번호 불일치");
+				} else {
+					// result == 1
+					System.out.println("회원 정보가 수정되었습니다! : ");
+				}
+				
+				break;
 			case 5 : searchRegion(); break;
 			case 0 : System.out.println("프로그램 종료..."); break;
 			default : System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
@@ -207,8 +219,10 @@ public String selectMember() {
 		
 		String str = "이름 : " + loginMember.getMemberName();
 		str += "\n아이디 : " + loginMember.getMemberId();
-		str += "\n나이 : " + loginMember.getMemberAge() + "세";
-		return str += "\n지역 : " + loginMember.getRegion();
+		str += "\n나이 : " + loginMember.getMemberAge();
+		str += "\n지역 : " + loginMember.getRegion();
+		
+		return str;
 	}
 //회원 정보 수정 기능
 	public int updateMember() {
@@ -231,7 +245,7 @@ public String selectMember() {
 		System.out.print("수정할 나이 입력 : ");
 		int inputAge = sc.nextInt();
 		
-		System.out.println("수정할 지역 입력 : ");
+		System.out.print("수정할 지역 입력 : ");
 		String inputRegion = sc.next();
 		
 		
