@@ -1,6 +1,6 @@
 package com.hw1.model.dto;
 
-public class Poetry extends Book {
+public class Poetry extends Book {// 시집 도서 클래스
 
 	private int numberOfPoems; // 시 수
 	

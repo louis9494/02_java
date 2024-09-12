@@ -1,6 +1,6 @@
 package com.hw1.model.dto;
 
-public class Novel extends Book {
+public class Novel extends Book {// 소설 도서 클래스
 	
 	private String genre; // 장르
 	

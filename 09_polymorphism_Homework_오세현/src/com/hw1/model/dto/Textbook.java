@@ -1,6 +1,6 @@
 package com.hw1.model.dto;
 
-public class Textbook extends Book {
+public class Textbook extends Book {// 전문서적 도서 클래스
 	
 	private String subject; // 과목
 	
