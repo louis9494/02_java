@@ -13,7 +13,7 @@ public class StudentRun {
 		//service.ex();
 		//service.displayMenu();
 		
-	/*	List<Integer> numberList = new ArrayList<Integer>();
+		List<Integer> numberList = new ArrayList<Integer>();
 		
 		numberList.add(5);
 		numberList.add(3);
@@ -24,6 +24,6 @@ public class StudentRun {
 		// 숫자 리스트를 정렬 (Comparable이 이미 구현되어 있음)
 		Collections.sort(numberList); //오름차순 정렬
 		
-		System.out.println(numberList); */
+		System.out.println(numberList); 
 	}
 }

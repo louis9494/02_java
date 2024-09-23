@@ -36,8 +36,8 @@ public class StudentService {
 	//private List<Object> testList = new ArrayList<Object>(); 
 	
 	// 학생 정보를 저장할 List 생성
-	private List<Student> studentList = new ArrayList<Student>(); // 검색(조회) 효율적
-	//private List<Student> studentList = new LinkedList<Student>(); // 추가, 수정, 삭제에 효율적
+	//private List<Student> studentList = new ArrayList<Student>(); // 검색(조회) 효율적
+	private List<Student> studentList = new LinkedList<Student>(); // 추가, 수정, 삭제에 효율적
 	
 	
 	
