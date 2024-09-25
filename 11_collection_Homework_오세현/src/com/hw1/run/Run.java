@@ -19,8 +19,10 @@ public class Run {
         
         Random random = new Random();
         
+        // 랜덤으로 한 명 뽑기
         int randomIndex = random.nextInt(friends.size());
         
+        // 선택된 리더 객체
         Friend leader = friends.get(randomIndex);
         
         leader.pickLeader();

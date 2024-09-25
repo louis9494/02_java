@@ -1,7 +1,5 @@
 package com.hw2.model.dto;
 
-import com.hw2.model.dto.Animal.Animal;
-
 public class Monkey extends Animal {
 	public Monkey() {}
 

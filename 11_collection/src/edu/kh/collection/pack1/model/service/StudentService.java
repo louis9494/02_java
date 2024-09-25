@@ -12,12 +12,7 @@ import edu.kh.collection.pack1.model.dto.Student;
 
 
 
-/**
- * 
- */
-/**
- * 
- */
+
 public class StudentService {
 	Scanner sc = new Scanner(System.in);
 	

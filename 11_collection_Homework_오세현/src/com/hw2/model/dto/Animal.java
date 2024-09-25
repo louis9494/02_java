@@ -1,4 +1,4 @@
-package com.hw2.model.dto.Animal;
+package com.hw2.model.dto;
 
 public abstract class Animal {
 	

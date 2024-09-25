@@ -1,7 +1,5 @@
 package com.hw2.model.dto;
 
-import com.hw2.model.dto.Animal.Animal;
-
 public class Tiger extends Animal {
 	 public Tiger() {
 		// TODO Auto-generated constructor stub
