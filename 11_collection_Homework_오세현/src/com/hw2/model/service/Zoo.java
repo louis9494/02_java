@@ -24,7 +24,7 @@ public class Zoo {
 			animal.sound();
 		}
 	}
-	
+	 
 	public void displayMenu() {
 		
 		Scanner sc = new Scanner(System.in);
@@ -51,7 +51,7 @@ public class Zoo {
 		} while( menuNum != 2);
 		
 		
-		
+
 	}
 	
 	

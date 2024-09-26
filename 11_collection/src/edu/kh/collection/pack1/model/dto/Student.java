@@ -63,7 +63,7 @@ public class Student implements Comparable<Student> {
 	
 	@Override
 	public String toString() {
-		return "Student [name=" + name + ", age=" + age + ", region=" + region + ", gender=" + gender + ", score="
+		return "Student [name=" + name + ",  score="
 				+ score + "]";
 	}
 
